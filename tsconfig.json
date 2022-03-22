@@ -10,7 +10,7 @@
     "paths": {
       "@/*": ["src/*"],
       "@@/*": ["src/.umi/*"],
-      "rc-tree-select": ["src/index.tsx"]
+      "@sweet7/rc-tree-select": ["src/index.tsx"]
     }
   }
 }
