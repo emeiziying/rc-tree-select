@@ -39,9 +39,6 @@
     "test": "father test",
     "now-build": "npm run build"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
