@@ -161,7 +161,7 @@ const OptionList: React.RefForwardingComponent<ReviseRefOptionListProps> = (_, r
         case KeyCode.DOWN:
         case KeyCode.LEFT:
         case KeyCode.RIGHT:
-          treeRef.current?.onKeyDown(event as React.KeyboardEvent<HTMLDivElement>);
+          treeRef.current?.onKeyDown((event as unknown) as React.KeyboardEvent<HTMLDivElement>);
           break;
 
         // >>> Select item

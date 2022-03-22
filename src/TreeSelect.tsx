@@ -265,13 +265,39 @@ const TreeSelect = React.forwardRef<BaseSelectRef, TreeSelectProps>((props, ref)
     onSearch?.(searchText);
   };
 
+  const onInternalSearchSplit: BaseSelectProps['onSearchSplit'] = words => {
+    console.log(words);
+
+    // let patchValues: RawValueType[] = words;
+    // if (mode !== 'tags') {
+    //   debugger
+    //   patchValues = words
+    //     .map((word) => {
+    //       const opt = labelOptions.get(word) || valueOptions.get(word);
+    //       return opt?.value;
+    //     })
+    //     .filter((val) => val !== undefined);
+    // }
+    // const newRawValues = Array.from(
+    //   new Set<RawValueType>([...rawValues, ...patchValues]),
+    // );
+    // triggerChange(newRawValues);
+    // newRawValues.forEach((newRawValue) => {
+    //   triggerSelect(newRawValue, true);
+    // });
+  };
+
   // ============================ Data ============================
   // `useTreeData` only do convert of `children` or `simpleMode`.
   // Else will return origin `treeData` for perf consideration.
   // Do not do anything to loop the data.
   const mergedTreeData = useTreeData(treeData, children, treeDataSimpleMode);
 
+  console.log('mergedTreeData', mergedTreeData);
+
   const { keyEntities, valueEntities } = useDataEntities(mergedTreeData, mergedFieldNames);
+
+  console.log(keyEntities, valueEntities);
 
   /** Get `missingRawValues` which not exist in the tree yet */
   const splitRawValues = React.useCallback(
@@ -386,6 +412,8 @@ const TreeSelect = React.forwardRef<BaseSelectRef, TreeSelectProps>((props, ref)
 
     return [fullCheckValues, halfCheckValues];
   }, [rawMixedLabeledValues]);
+
+  console.log('rawLabeledValues', rawLabeledValues);
 
   // const [mergedValues] = useCache(rawLabeledValues);
   const rawValues = React.useMemo(() => rawLabeledValues.map(item => item.value), [
@@ -718,6 +746,7 @@ const TreeSelect = React.forwardRef<BaseSelectRef, TreeSelectProps>((props, ref)
           // >>> Search
           searchValue={mergedSearchValue}
           onSearch={onInternalSearch}
+          onSearchSplit={onInternalSearchSplit}
           // >>> Options
           OptionList={OptionList}
           emptyOptions={!mergedTreeData.length}
