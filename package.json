@@ -1,5 +1,5 @@
 {
-  "name": "rc-tree-select",
+  "name": "@sweet7/rc-tree-select",
   "version": "5.2.1-0",
   "description": "tree-select ui component for react",
   "keywords": [
@@ -38,6 +38,10 @@
     "prettier": "prettier '{src,tests}/**/*.{ts,tsx}' 'tests/**/*.js' --write",
     "test": "father test",
     "now-build": "npm run build"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "peerDependencies": {
     "react": "*",
