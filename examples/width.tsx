@@ -14,16 +14,16 @@ function Demo() {
           <TreeNode value="leaf3" title={<b style={{ color: '#08c' }}>leaf3</b>} />
         </TreeNode>
         <TreeNode value="parent 1-2 sdfsdfsdf" title="parent 1-2 sdfsdfsd">
-          <TreeNode value="leaf3" title={<b style={{ color: '#08c' }}>leaf3</b>} />
+          <TreeNode value="leaf4" title={<b style={{ color: '#08c' }}>leaf4</b>} />
         </TreeNode>
         <TreeNode value="parent 1-3 sdfsdfsdf" title="parent 1-2 sdfsdfsd">
-          <TreeNode value="leaf3" title={<b style={{ color: '#08c' }}>leaf3</b>} />
+          <TreeNode value="leaf5" title={<b style={{ color: '#08c' }}>leaf5</b>} />
         </TreeNode>
         <TreeNode value="parent 1-4 sdfsdfsdf" title="parent 1-4 sdfsdfsd">
-          <TreeNode value="leaf3" title={<b style={{ color: '#08c' }}>leaf3</b>} />
+          <TreeNode value="leaf6" title={<b style={{ color: '#08c' }}>leaf6</b>} />
         </TreeNode>
         <TreeNode value="parent 1-5 2sdfsdfsdf" title="parent 1-5 sdfsdfsd">
-          <TreeNode value="leaf3" title={<b style={{ color: '#08c' }}>leaf3</b>} />
+          <TreeNode value="leaf7" title={<b style={{ color: '#08c' }}>leaf7</b>} />
         </TreeNode>
       </TreeNode>
     </TreeSelect>

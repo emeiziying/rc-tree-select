@@ -174,7 +174,7 @@ function isRawValue(value: RawValueType | LabeledValueType): value is RawValueTy
 const TreeSelect = React.forwardRef<BaseSelectRef, TreeSelectProps>((props, ref) => {
   const {
     id,
-    prefixCls = 'rc-tree-select',
+    prefixCls = 'sweet7_rc-tree-select',
 
     // Value
     value,

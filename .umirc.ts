@@ -1,11 +1,9 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
-  title: 'rc-tree-select',
-  favicon:
-    'https://avatars0.githubusercontent.com/u/9441414?s=200&v=4',
-  logo:
-    'https://avatars0.githubusercontent.com/u/9441414?s=200&v=4',
+  title: '@sweet7/rc-tree-select',
+  favicon: 'https://avatars0.githubusercontent.com/u/9441414?s=200&v=4',
+  logo: 'https://avatars0.githubusercontent.com/u/9441414?s=200&v=4',
   exportStatic: {},
   outputPath: '.doc',
   resolve: {
@@ -17,5 +15,5 @@ export default defineConfig({
         width: auto !important;
       }
     `,
-  ]
+  ],
 });
