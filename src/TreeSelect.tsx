@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { BaseSelect } from 'rc-select';
+import { BaseSelect } from '@sweet7/rc-select';
 import type { IconType } from 'rc-tree/lib/interface';
 import type {
   BaseSelectRef,
   BaseSelectPropsWithoutPrivate,
   BaseSelectProps,
   SelectProps,
-} from 'rc-select';
+} from '@sweet7/rc-select';
 import { conductCheck } from 'rc-tree/lib/utils/conductUtil';
-import useId from 'rc-select/lib/hooks/useId';
+import useId from '@sweet7/rc-select/lib/hooks/useId';
 import useMergedState from 'rc-util/lib/hooks/useMergedState';
 import OptionList from './OptionList';
 import TreeNode from './TreeNode';
