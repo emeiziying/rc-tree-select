@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Select from 'rc-select';
+import Select from '@sweet7/rc-select';
 import Form, { useForm, Field } from 'rc-field-form';
 import TreeSelect from '../src';
-import 'rc-select/assets/index.less';
+import '@sweet7/rc-select/assets/index.less';
 import '../assets/index.less';
 import { gData } from './utils/dataUtil';
 
@@ -105,11 +105,7 @@ const Demo = () => {
             >
               {(control, { errors }) => (
                 <div>
-                  <TreeSelectInput
-                    {...tProps}
-                    {...control}
-                    style={{ width: 300 }}
-                  />
+                  <TreeSelectInput {...tProps} {...control} style={{ width: 300 }} />
 
                   <p style={errorStyle}>{errors.join(',')}</p>
                 </div>
@@ -122,18 +118,11 @@ const Demo = () => {
           <div>
             <Field
               name="select"
-              rules={[
-                { required: true, type: 'array', message: 'select 需要必填' },
-              ]}
+              rules={[{ required: true, type: 'array', message: 'select 需要必填' }]}
             >
               {(control, { errors }) => (
                 <div>
-                  <Select
-                    style={{ width: 200 }}
-                    {...control}
-                    allowClear
-                    mode="multiple"
-                  >
+                  <Select style={{ width: 200 }} {...control} allowClear mode="multiple">
                     <Option value="jack">jack</Option>
                     <Option value="lucy">lucy</Option>
                     <Option value="disabled" disabled>

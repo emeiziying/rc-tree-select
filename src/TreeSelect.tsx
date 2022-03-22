@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { BaseSelect } from 'rc-select';
+import { BaseSelect } from '@sweet7/rc-select';
 import type { IconType } from 'rc-tree/lib/interface';
 import type {
   BaseSelectRef,
   BaseSelectPropsWithoutPrivate,
   BaseSelectProps,
   SelectProps,
-} from 'rc-select';
+} from '@sweet7/rc-select';
 import { conductCheck } from 'rc-tree/lib/utils/conductUtil';
-import useId from 'rc-select/lib/hooks/useId';
+import useId from '@sweet7/rc-select/lib/hooks/useId';
 import useMergedState from 'rc-util/lib/hooks/useMergedState';
 import OptionList from './OptionList';
 import TreeNode from './TreeNode';
@@ -104,7 +104,7 @@ export interface LegacyDataNode extends DefaultOptionType {
 }
 export interface TreeSelectProps<
   ValueType = any,
-  OptionType extends BaseOptionType = DefaultOptionType,
+  OptionType extends BaseOptionType = DefaultOptionType
 > extends Omit<BaseSelectPropsWithoutPrivate, 'mode'> {
   prefixCls?: string;
   id?: string;
@@ -366,10 +366,10 @@ const TreeSelect = React.forwardRef<BaseSelectRef, TreeSelectProps>((props, ref)
   // =========================== Values ===========================
   const [internalValue, setInternalValue] = useMergedState(defaultValue, { value });
 
-  const rawMixedLabeledValues = React.useMemo(
-    () => toLabeledValues(internalValue),
-    [toLabeledValues, internalValue],
-  );
+  const rawMixedLabeledValues = React.useMemo(() => toLabeledValues(internalValue), [
+    toLabeledValues,
+    internalValue,
+  ]);
 
   // Split value into full check and half check
   const [rawLabeledValues, rawHalfLabeledValues] = React.useMemo(() => {
@@ -388,10 +388,9 @@ const TreeSelect = React.forwardRef<BaseSelectRef, TreeSelectProps>((props, ref)
   }, [rawMixedLabeledValues]);
 
   // const [mergedValues] = useCache(rawLabeledValues);
-  const rawValues = React.useMemo(
-    () => rawLabeledValues.map(item => item.value),
-    [rawLabeledValues],
-  );
+  const rawValues = React.useMemo(() => rawLabeledValues.map(item => item.value), [
+    rawLabeledValues,
+  ]);
 
   // Convert value to key. Will fill missed keys for conduct check.
   const [rawCheckedValues, rawHalfCheckedValues] = useCheckedKeys(
@@ -726,9 +725,9 @@ if (process.env.NODE_ENV !== 'production') {
   TreeSelect.displayName = 'TreeSelect';
 }
 
-const GenericTreeSelect = TreeSelect as unknown as (<
+const GenericTreeSelect = (TreeSelect as unknown) as (<
   ValueType = any,
-  OptionType extends BaseOptionType | DefaultOptionType = DefaultOptionType,
+  OptionType extends BaseOptionType | DefaultOptionType = DefaultOptionType
 >(
   props: React.PropsWithChildren<TreeSelectProps<ValueType, OptionType>> & {
     ref?: React.Ref<BaseSelectRef>;
